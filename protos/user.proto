@@ -1,0 +1,17 @@
+syntax = "proto3";
+package userpackage;
+
+enum UserRole {
+    ADMIN = 0;
+    USER = 1[deprecated = true];
+}
+
+message User {
+    string name = 1;
+    string email = 2;
+    UserRole role = 3;
+}
+
+message UserList {
+    repeated User users = 1;
+}
